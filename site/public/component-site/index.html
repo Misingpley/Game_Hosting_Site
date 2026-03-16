@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Free Minecraft Servers — Launch in 60 seconds</title>
+    <meta name="description" content="Start a Minecraft server instantly with a free tier. Premium hardware, backups, DDoS protection, and 99.9% uptime." />
+
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/home.css" />
+
+    <script src="js/main.js" defer></script>
+    <script src="js/pricing.js" defer></script>
+    <script src="js/slider.js" defer></script>
+</head>
+
+<body>
+<header class="topbar" data-topbar>
+    <nav class="container topbar__inner">
+
+        <a class="brand" href="./index.html" aria-label="Home">
+            <img class="brand__logo" src="assets/icons/logo.svg" alt="Logo" />
+        </a>
+
+        <nav class="nav" data-nav aria-label="Main navigation">
+            <a class="nav__link" href="./index.html">Home</a>
+            <a class="nav__link" href="pages/create-server.html">Create a server</a>
+        
+            <div class="topbar__actions">
+                <a class="btn btn--ghost" href="pages/login.html">Login</a>
+                <a class="btn btn--primary topbar__signup" href="pages/signup.html">Sign Up</a>
+            </div>
+        </nav>
+
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" data-burger>
+            <span></span><span></span><span></span>
+        </button>
+
+    </nav>
+</header>
+
+<div class="mnav" data-mobile-menu aria-hidden="true">
+    <div class="mnav__panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="mnav__top">
+            <a class="brand" href="./index.html" aria-label="Home">
+                <img class="brand__logo" src="assets/icons/logo.svg" alt="Logo" />
+            </a>
+            <button class="mnav__close" type="button" aria-label="Close menu" data-mobile-close>✕</button>
+        </div>
+
+        <nav class="mnav__links" aria-label="Mobile navigation">
+            <a class="mnav__link is-active" href="./index.html">Home</a>
+            <a class="mnav__link" href="pages/create-server.html">Create a server</a>
+        </nav>
+
+        <div class="mnav__bottom">
+            <a class="mnav__btn mnav__btn--ghost" href="./pages/login.html">Login</a>
+            <a class="mnav__btn mnav__btn--primary" href="./pages/signup.html">Sign Up</a>
+        </div>
+    </div>
+</div>
+
+<main>
+    <section class="hero">
+        <div class="container hero__grid">
+            <div class="hero__left">
+                <div class="badge">
+                    <span class="badge__icon" aria-hidden="true">✦</span>
+                    <span>Minecraft Server Hosting</span>
+                </div>
+
+                <h1 class="hero__title">
+                    FREE <span class="accent">MINECRAFT<br> SERVERS</span>
+                </h1>
+
+                <p class="hero__desc">
+                    Create your Minecraft server instantly with our free tier. Get<br> powerful hardware, automatic backups,
+                    DDoS protection, and<br> 99.9% uptime. Upgrade anytime for more RAM and<br> performance.
+                </p>
+
+                <div class="hero__cta" id="create">
+                    <a class="btn btn--create btn--lg" href="pages/create-server.html">
+                        <img class="btn__icon btn__icon--rocket" src="assets/icons/rocket.svg" alt="Create Server" aria-hidden="true">
+                        Create Server
+                    </a>
+                    <a class="btn btn--discord btn--lg" href="#" data-discord-link>
+                        <img class="btn__icon btn__icon--discord" src="assets/icons/discord.png" alt="discord" aria-hidden="true">
+                        Join Discord
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero__right">
+                <section class="console card">
+                    <div class="console__top">
+                        <div class="traffic" aria-hidden="true">
+                            <span class="dot dot--r"></span>
+                            <span class="dot dot--y"></span>
+                            <span class="dot dot--g"></span>
+                        </div>
+                        <div class="console__title">MC Server Console</div>
+                        <div class="console__time" data-clock>12:20:29</div>
+                    </div>
+
+                    <div class="console__screen">
+            <pre class="console__log" aria-label="Console log">
+[12:19:38] &lt;StoneSeeker&gt; Who wants to explore the new caves?
+[12:19:44] [INFO] Player statistics synced
+[12:19:50] &lt;QuartzCrafter&gt; Setting up a villager trading hall, join me!
+[12:19:57] &lt;PixelMaster&gt; Check out my base at x:-250 z:420!
+[12:20:01] [INFO] StoneSeeker joined the game
+[12:20:04] [INFO] ForestGuardian joined the game
+[12:20:07] [INFO] SkyFortress left the game
+[12:20:19] [INFO] New biome generation in progress...
+[12:20:26] [SUCCESS] Chunk preloading complete
+[12:20:29] [INFO] Running garbage collection...</pre>
+
+                        <div class="console__meter">
+                            <div class="console__meterRow">
+                                <span class="muted">Memory Usage:</span>
+                                <span class="muted">2560MB / 4096MB</span>
+                            </div>
+                            <div class="bar" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">
+                                <span class="bar__fill" style="width:62%"></span>
+                            </div>
+                        </div>
+
+                        <div class="console__stats">
+                            <div class="mini card">
+                                <div class="mini__label muted">Players Online</div>
+                                <div class="mini__value"><span class="accent">30</span>/100</div>
+                            </div>
+                            <div class="mini card">
+                                <div class="mini__label muted">TPS</div>
+                                <div class="mini__value"><span class="accent">19.8</span></div>
+                            </div>
+                        </div>
+
+                        <div class="console__cmd">
+                            <span class="accent">$</span>
+                            <input class="console__input" type="text" placeholder="Type a command..." disabled />
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container stats__grid">
+            <div class="stat">
+                <div class="stat__num accent">343</div>
+                <div class="stat__label muted">ACTIVE SERVERS</div>
+            </div>
+            <div class="stat">
+                <div class="stat__num accent">464</div>
+                <div class="stat__label muted">ONLINE PLAYERS</div>
+            </div>
+            <div class="stat">
+                <div class="stat__num accent">871 946</div>
+                <div class="stat__label muted">ACTIVE USERS</div>
+            </div>
+            <div class="stat">
+                <div class="stat__num accent">460 316</div>
+                <div class="stat__label muted">TOTAL SERVERS</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section__head">
+                <h2>Why Choose <span class="accent">Minecraft Servers</span>?</h2>
+                <p class="muted">Premium hardware, instant setup, and an unbeatable free tier.</p>
+            </div>
+
+            <div class="grid grid--3">
+                <article class="feature card">
+                    <img class="feature__icon" src="assets/icons/cpu.svg" alt="processor" aria-hidden="true">
+                    <h3>Premium Hardware & Free Tier</h3>
+                    <p class="muted">
+                        Start free with solid RAM and auto-start tech — upgrade later for NVMe and more power.
+                    </p>
+                </article>
+
+                <article class="feature card">
+                    <img class="feature__icon" src="assets/icons/cloud-lightning.svg" alt="lightning" aria-hidden="true">
+                    <h3>Instant Setup & One-Click Everything</h3>
+                    <p class="muted">
+                        Servers ready in under 60 seconds. Install plugins, modpacks, and switch versions with one click.
+                    </p>
+                </article>
+
+                <article class="feature card">
+                    <img class="feature__icon" src="assets/icons/shield-check.svg" alt="shield-check" aria-hidden="true">
+                    <h3>Security & 24/7 Support</h3>
+                    <p class="muted">
+                        DDoS protection, automated backups, and support around the clock (Discord).
+                    </p>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section" id="pricing">
+        <div class="container">
+            <div class="section__head">
+                <h2>Minecraft Server <span class="accent">Hosting Plans</span></h2>
+                <p class="muted">Start with free or choose a premium plan. No hidden fees.</p>
+            </div>
+
+            <section
+                    class="pricing"
+                    data-pricing
+                    data-base-period="weekly"
+                    data-monthly-discount="0.15"
+                    data-quarterly-discount="0.25"
+                    data-yearly-discount="0.35"
+                    data-default-billing="yearly"
+            >
+                <div class="billing" role="tablist" aria-label="Billing cycle">
+                    <button class="pill" type="button" data-billing="weekly" role="tab" aria-selected="false">
+                        Weekly <span class="muted"></span>
+                    </button>
+
+                    <button class="pill" type="button" data-billing="monthly" role="tab" aria-selected="false">
+                        Monthly <span class="muted">-15%</span>
+                    </button>
+
+                    <button class="pill" type="button" data-billing="quarterly" role="tab" aria-selected="false">
+                        Quarterly <span class="muted">-25%</span>
+                    </button>
+
+                    <button class="pill" type="button" data-billing="yearly" role="tab" aria-selected="false">
+                        Yearly <span class="muted">-35%</span>
+                    </button>
+                </div>
+
+                <div class="grid grid--3 pricing">
+                    <article class="plan card">
+                        <div class="plan__top">
+                            <div class="plan__name">Bat</div>
+                            <div class="plan__hint muted">Auto-Sleep When Idle</div>
+                        </div>
+
+                        <div class="plan__price">
+                            <div class="plan__value accent">Free</div>
+                        </div>
+
+                        <ul class="plan__list">
+                            <li><strong>4 GB</strong> <span class="muted">Standard RAM</span></li>
+                            <li><strong>10 GB</strong> <span class="muted">SSD Storage</span></li>
+                            <li><strong>8 Players</strong> <span class="muted">Recommended</span></li>
+                            <li><strong>Multi-Core</strong> <span class="muted">Processing Power</span></li>
+                        </ul>
+
+                        <a class="btn btn--primary w100" href="#">Create Server</a>
+                    </article>
+
+                    <article class="plan card card--glow" data-plan data-base-price="6">
+                        <div class="plan__top">
+                            <div class="plan__name">Wolf</div>
+                            <div class="plan__hint muted">24/7 Always Online</div>
+                        </div>
+
+                        <div class="plan__price">
+                            <div class="plan__value">
+                                <span class="accent">$</span><span class="accent" data-price>—</span>
+                                <span class="muted" data-price-suffix>/mo</span>
+                            </div>
+                        </div>
+
+                        <ul class="plan__list">
+                            <li><strong>8 GB</strong> <span class="muted">RAM</span></li>
+                            <li><strong>25 GB</strong> <span class="muted">SSD</span></li>
+                            <li><strong>Backups</strong> <span class="muted">Daily</span></li>
+                            <li><strong>DDoS</strong> <span class="muted">Protection</span></li>
+                        </ul>
+
+                        <a class="btn btn--primary w100" href="#">Create Server</a>
+                    </article>
+
+                    <article class="plan card" data-plan data-base-price="12">
+                        <div class="plan__top">
+                            <div class="plan__name">Dragon</div>
+                            <div class="plan__hint muted">24/7 Always Online</div>
+                        </div>
+
+                        <div class="plan__price">
+                            <div class="plan__value">
+                                <span class="accent">$</span><span class="accent" data-price>—</span>
+                                <span class="muted" data-price-suffix>/mo</span>
+                            </div>
+                        </div>
+
+                        <ul class="plan__list">
+                            <li><strong>16 GB</strong> <span class="muted">RAM</span></li>
+                            <li><strong>60 GB</strong> <span class="muted">SSD / NVMe</span></li>
+                            <li><strong>Priority</strong> <span class="muted">Support</span></li>
+                            <li><strong>Advanced</strong> <span class="muted">Options</span></li>
+                        </ul>
+
+                        <a class="btn btn--primary w100" href="#">Create Server</a>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="section__head">
+                <h2>Minecraft Hosting <span class="accent">Reviews</span></h2>
+                <p class="muted">Real feedback from players worldwide.</p>
+            </div>
+
+            <div class="review card">
+                <button class="review__nav review__nav--l" type="button" aria-label="Previous review" data-review-prev>
+                    <img class="nav__icon" src="./assets/icons/chevron-up.svg" alt="Previous"></button>
+
+                <div class="review__body">
+                    <div class="review__stars" aria-hidden="true">★★★★★</div>
+                    <p class="review__text" data-review-text>
+                        One of the best hosting services I’ve used. The panel is simple, and the free tier is great for friends.
+                    </p>
+                    <div class="review__meta">
+                        <div class="review__name" data-review-name>Parth Sharma</div>
+                        <div class="review__country review__country--accent" data-review-country>India</div>
+                    </div>
+
+                    <div class="dots" aria-label="Review dots" data-review-dots>
+                        <span class="dots__active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <button class="review__nav review__nav--r" type="button" aria-label="Next review" data-review-next>
+                    <img class="nav__icon" src="./assets/icons/chevron-up.svg" alt="Next"></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section__head">
+                <h2>Got Questions? <span class="accent">We’ve Got Answers</span></h2>
+                <p class="muted">Can’t find what you’re looking for? Contact support below.</p>
+            </div>
+
+            <div class="faq">
+                <details class="faq__item card">
+                    <summary class="faq__a">
+                        How quickly can I get my server running?
+                        <span class="faq__caret" aria-hidden="true">
+                <img src="assets/icons/chevron-up.svg" alt="">
+            </span>
+                    </summary>
+                    <p class="faq__text muted">Usually under 60 seconds after setup. (We’ll tune the real number later.)</p>
+                </details>
+
+                <details class="faq__item card">
+                    <summary class="faq__a">
+                        Can I upgrade or downgrade my plan later?
+                        <span class="faq__caret" aria-hidden="true">
+                <img src="assets/icons/chevron-up.svg" alt="">
+            </span>
+                    </summary>
+                    <p class="faq__text muted">Yes — upgrade anytime. Downgrade when you don’t need extra resources.</p>
+                </details>
+
+                <details class="faq__item card">
+                    <summary class="faq__a">
+                        Is DDoS protection included?
+                        <span class="faq__caret" aria-hidden="true">
+                <img src="assets/icons/chevron-up.svg" alt="">
+            </span>
+                    </summary>
+                    <p class="faq__text muted">Yes, protection is included for all plans.</p>
+                </details>
+
+                <details class="faq__item card">
+                    <summary class="faq__a">
+                        Can I install mods and plugins?
+                        <span class="faq__caret" aria-hidden="true">
+                <img src="assets/icons/chevron-up.svg" alt="">
+            </span>
+                    </summary>
+                    <p class="faq__text muted">Yes — we support popular server types.</p>
+                </details>
+
+                <details class="faq__item card">
+                    <summary class="faq__a">
+                        What payment methods do you accept?
+                        <span class="faq__caret" aria-hidden="true">
+                <img src="assets/icons/chevron-up.svg" alt="">
+            </span>
+                    </summary>
+                    <p class="faq__text muted">We’ll add Stripe/PayPal info later. For now this is placeholder copy.</p>
+                </details>
+            </div>
+
+            <div class="faq__support">
+                <div class="muted">Still have questions?</div>
+                <a class="link" href="#" data-discord-link>Contact our support team →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container cta__inner card">
+            <h2>Ready to Start Your <span class="accent">Minecraft Server</span>?</h2>
+            <p class="muted">
+                Join thousands of satisfied customers and start free or go premium.
+            </p>
+            <div class="cta__buttons">
+                <a class="btn btn--create btn--lg" href="pages/create-server.html">
+                    <img class="btn__icon btn__icon--rocket" src="./assets/icons/rocket.svg" alt="Create Server" aria-hidden="true">
+                    Create Server
+                </a>
+                <a class="btn btn--discord btn--lg" href="#" data-discord-link>
+                    <img class="btn__icon btn__icon--discord" src="assets/icons/discord.png" alt="discord" aria-hidden="true">
+                    <span>Join Discord</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer__grid">
+        <div class="footer__brand">
+            <div class="footer__logoRow">
+                <img class="brand__logo" src="assets/icons/logo.svg" alt="Logo" />
+                <span class="footer__brandName">MCServerHost</span>
+            </div>
+
+            <p class="footer__desc">
+                Premium Minecraft server hosting with exceptional performance, reliability, and 24/7 support.
+            </p>
+
+            <div class="footer__social">
+                <a class="footer__icon" href="#" aria-label="TikTok">
+                    <img class="btn__icon" src="assets/icons/tiktok.png" alt="tiktok" aria-hidden="true">
+                </a>
+                <a class="footer__icon" href="#" aria-label="Twitter">
+                    <img class="btn__icon" src="assets/icons/twitter.png" alt="twitter" aria-hidden="true">
+                </a>
+                <a class="footer__icon" href="#" aria-label="Discord">
+                    <img class="btn__icon" src="assets/icons/discord.png" alt="discord" aria-hidden="true">
+                </a>
+            </div>
+        </div>
+
+        <div class="footer__col">
+            <div class="footer__title">Services</div>
+            <a class="footer__link" href="#">Minecraft Hosting</a>
+            <a class="footer__link" href="#">Free Minecraft Hosting</a>
+            <a class="footer__link" href="#">Account Area</a>
+            <a class="footer__link" href="#">Server Dashboard</a>
+        </div>
+
+        <div class="footer__col">
+            <div class="footer__title">Community</div>
+            <a class="footer__link" href="#">Community Forums</a>
+            <a class="footer__link" href="#">Minecraft Server List</a>
+            <a class="footer__link" href="#">Member List</a>
+        </div>
+
+        <div class="footer__col">
+            <div class="footer__title">Resources</div>
+            <a class="footer__link" href="#">Careers</a>
+            <a class="footer__link" href="#">Downloads</a>
+            <a class="footer__link" href="#">Service Status</a>
+            <a class="footer__link" href="#">Terms of Service</a>
+            <a class="footer__link" href="#">Privacy Policy</a>
+        </div>
+    </div>
+
+    <div class="container footer__bottom">
+        <div class="footer__line"></div>
+        <div class="footer__copy">© 2026 MCServerHost. All rights reserved.</div>
+    </div>
+</footer>
+
+<div id="login" hidden></div>
+<div id="signup" hidden></div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/buy-server.css">
+    <script src="../js/main.js"></script>
+    <title>Create Your Minecraft Server</title>
+</head>
+<body>
+<main class="acc">
+    <div class="container">
+        <a href="#" class="back-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            Back to plans
+        </a>
+
+        <header class="create-header">
+            <div class="badge-free">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span>Free Minecraft Server Hosting</span>
+            </div>
+            <h1>Create Your <span>Minecraft</span> Server</h1>
+            <p class="acc__subtitle">Get started in minutes. No credit card required.</p>
+        </header>
+
+        <div class="create-grid">
+
+            <div class="create-main">
+                <div class="acc-card main-config-card">
+
+                    <div class="step-box">
+                        <div class="step-head">
+                            <span class="step-idx">1</span>
+                            <span class="step-name">Server Name</span>
+                        </div>
+                        <div class="input-header">
+                            <span class="counter-text">16/50 characters</span>
+                            <button class="btn-refresh-alt">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+                                Refresh
+                            </button>
+                        </div>
+                        <input type="text" class="create-input" placeholder="ThunderEvolution">
+                    </div>
+
+                    <div class="step-box">
+                        <div class="step-head">
+                            <span class="step-idx">2</span>
+                            <span class="step-name">Subdomain</span>
+                        </div>
+                        <div class="subdomain-wrapper">
+                            <div class="input-with-icon">
+                                <input type="text" class="create-input" placeholder="thunderevolution281">
+                                <svg class="input-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#39a11c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <span class="domain-suffix">.mcsh.io</span>
+                        </div>
+                        <div class="subdomain-footer">
+                            <p class="status-ok small">Available</p>
+                            <p class="muted tiny-info">3-28 characters, lowercase letters and numbers only</p>
+                        </div>
+                    </div>
+
+                    <div class="step-box">
+                        <div class="step-head">
+                            <span class="step-idx">3</span>
+                            <span class="step-name">Location</span>
+                        </div>
+                        <div class="loc-grid">
+                            <div class="loc-item active">
+                                <span class="loc-flag">🇩🇪</span>
+                                <div class="loc-details">
+                                    <b>Frankfurt, Germany</b>
+                                    <span class="muted small">42% load</span>
+                                </div>
+                            </div>
+                            <div class="loc-item">
+                                <span class="loc-flag">🇺🇸</span>
+                                <div class="loc-details">
+                                    <b>New York, USA</b>
+                                    <span class="muted small">62% load</span>
+                                </div>
+                            </div>
+                            <div class="loc-item">
+                                <span class="loc-flag">🇸🇬</span>
+                                <div class="loc-details">
+                                    <b>Singapore</b>
+                                    <span class="muted small">36% load</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-box">
+                        <div class="step-head">
+                            <span class="step-idx">4</span>
+                            <span class="step-name">Server Software</span>
+                        </div>
+                        <div class="soft-grid">
+                            <div class="input-group">
+                                <label class="muted small">Server Type</label>
+                                <select class="create-input select-styled"><option>Java</option></select>
+                            </div>
+                            <div class="input-group">
+                                <label class="muted small">Server Software</label>
+                                <select class="create-input select-styled"><option>Paper</option></select>
+                            </div>
+                            <div class="input-group">
+                                <label class="muted small">Version</label>
+                                <select class="create-input select-styled"><option>Latest version (latest)</option></select>
+                            </div>
+                            <div class="input-group">
+                                <label class="muted small">Docker Image</label>
+                                <select class="create-input select-styled"><option>Java 21</option></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-box no-border">
+                        <div class="step-head">
+                            <span class="step-idx">5</span>
+                            <span class="step-name">Description</span>
+                        </div>
+                        <div class="input-header">
+                            <span class="counter-text">0/200 characters</span>
+                        </div>
+                        <textarea class="create-input area" placeholder="A brief description of your server (optional)"></textarea>
+                    </div>
+                </div>
+            </div> <aside class="create-side">
+
+            <div class="acc-card side-info-card need-power-card">
+                <div class="power-header">
+                    <div class="side-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <div class="small-title">NEED MORE POWER?</div>
+                </div>
+                <div class="power-body">
+                    <p class="muted side-text">Up to 32 GB RAM, Ryzen 9 9950X, NVMe SSDs starting at just $1.41/week.</p>
+                    <a href="#" class="yellow-link">View paid plans →</a>
+                </div>
+            </div>
+
+            <div class="acc-card side-info-card">
+                <div class="plan-header">
+                    <div class="plan-avatar"><img src="../assets/icons/elixir-amethyst.png" alt="Free" width="24"></div>
+                    <div class="acc-card__text-stack">
+                        <div class="acc-card__title">Free Plan</div>
+                        <div class="status-ok small-text">Always Free</div>
+                    </div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>4 GB RAM</span> <span class="muted">DDR4</span></li>
+                    <li><span>10 GB Storage</span> <span class="muted">SSD</span></li>
+                    <li><span>Multi-Core CPU</span> <span class="muted">Intel</span></li>
+                    <li><span>DDoS Protection</span> <span class="status-ok">Included</span></li>
+                </ul>
+            </div>
+
+            <div class="acc-card side-info-card launch-card">
+                <button class="btn launch-btn">Launch Server</button>
+            </div>
+
+            <div class="acc-card side-info-card">
+                <div class="small-title">WHAT'S INCLUDED</div>
+                <ul class="check-list">
+                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#39a11c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Auto-start technology</li>
+                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#39a11c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> One-click plugins</li>
+                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#39a11c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> One-click modpacks</li>
+                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#39a11c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> File manager & SFTP</li>
+                    <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#39a11c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom subdomain</li>
+                </ul>
+            </div>
+        </aside> </div> </div>
+</main>
+</body>
+</html>

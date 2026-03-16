@@ -1,0 +1,153 @@
+.serversHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin: 28px 0 22px;
+}
+
+.serversHead__title{
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.serversHead__sub{
+  margin-top: 6px;
+  color: rgba(255,255,255,.65);
+}
+
+.btnCreate{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: #47e88ed1;
+  color:#ffffff;
+  font-weight: 600;
+  text-decoration:none;
+}
+
+.btnCreate__plus{
+  width: 26px;
+  height: 26px;
+  border-radius: 10px;
+  display:grid;
+  place-items:center;
+  font-size: 18px;
+  font-weight: 900;
+  filter: invert(1);
+}
+
+.serversList{
+  display:grid;
+  gap: 14px;
+}
+
+.srv{
+  position: relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  overflow: hidden;
+}
+
+.srv::before{
+  content:"";
+  position:absolute;
+  left:0; top:0; bottom:0;
+  width: 5px;
+  background: #ff3b3b;
+  opacity: .9;
+}
+
+.srv__left{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.srv__icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.srv__meta{
+   min-width: 0; 
+  }
+
+.srv__top{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.srv__name{
+  color:#fff;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 340px;
+}
+
+.srv__badge{
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(24,212,106,.55);
+  color: #18d46a;
+  background: rgba(24,212,106,.08);
+  font-weight: 800;
+}
+
+.srv__domain{
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 420px;
+}
+
+.srv__right{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.srv__status{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.70);
+}
+
+.srv__btn{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.85);
+  cursor:pointer;
+}
+
+.emptyState{
+  margin-top: 20px;
+  color: rgba(255,255,255,.6);
+}

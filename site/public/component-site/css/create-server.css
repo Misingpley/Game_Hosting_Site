@@ -1,0 +1,394 @@
+.page-create .cs-hero {
+  padding: 64px 0 24px;
+  text-align: center;
+}
+
+.page-create .cs-hero__inner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.page-create .cs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(86, 220, 49, 0.25);
+  background: rgba(86, 220, 49, 0.08);
+  margin-bottom: 18px;
+}
+
+.page-create .cs-badge__dot {
+  color: var(--accent2);
+}
+
+.page-create .cs-hero__title {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 56px);
+  letter-spacing: -0.02em;
+}
+
+.page-create .cs-hero__desc {
+  margin: 14px 0 52px;
+  line-height: 1.6;
+}
+
+.page-create .cs-billing {
+  margin: 22px auto 0;
+  display: inline-flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.18);
+  backdrop-filter: blur(10px);
+}
+
+.page-create .cs-billing .pill {
+  position: relative;
+  border-radius: 999px;
+  padding: 10px 14px;
+  min-height: 40px;
+  border: 1px solid transparent;
+}
+
+.page-create .cs-billing .pill.is-active {
+  border-color: rgba(86, 220, 49, 0.35);
+  background: rgba(86, 220, 49, 0.14);
+}
+
+.page-create .pill__hint {
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+.page-create .pill__save {
+  margin-left: 10px;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: #0b0f0c;
+  background: var(--accent2);
+}
+
+.page-create .cs-plans {
+  padding: 26px 0 36px;
+}
+
+.page-create .cs-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.page-create .cs-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.page-create .cs-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.page-create .cs-grid--mt {
+  margin-top: 18px;
+}
+
+.page-create .cs-plan {
+  position: relative;
+  padding: 18px;
+  border-radius: 16px;
+  min-height: 520px;
+}
+
+.page-create .cs-plan__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.page-create .cs-tag {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(86,220,49,.25);
+  color: var(--accent2);
+  background: rgba(86,220,49,.10);
+}
+
+.page-create .cs-tag--free {
+  border-color: rgba(216,204,64,.25);
+  color: var(--accent);
+  background: rgba(216,204,64,.10);
+}
+
+.page-create .cs-mob {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.page-create .cs-plan__name {
+  margin: 0;
+  font-size: 18px;
+}
+
+.page-create .cs-plan__hint {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.page-create .cs-price {
+  margin-top: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.page-create .cs-price__value {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.page-create .cs-divider {
+  height: 1px;
+  margin: 16px 0;
+  background: rgba(255,255,255,.08);
+}
+
+.page-create .cs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(255,255,255,.78);
+}
+
+.page-create .cs-list li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.page-create .cs-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(86,220,49,.85);
+}
+
+.page-create .cs-btn {
+  margin-top: 18px;
+}
+
+.page-create .cs-plan--popular {
+  border: 1px solid rgba(86,220,49,.35);
+  box-shadow: 0 24px 80px rgba(86,220,49,.12);
+  background: radial-gradient(1200px 500px at 80% 0%, rgba(86,220,49,.18), transparent 60%);
+}
+
+.page-create .cs-pop {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  letter-spacing: .08em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent2);
+  color: #0b0f0c;
+  font-weight: 700;
+}
+
+
+.cs-mob--bat     .cs-mob__icon{ width: 38px; height: 40px; }
+.cs-mob--zombie  .cs-mob__icon{ width: 38px; height: 40px; }
+.cs-mob--spider  .cs-mob__icon{ width: 38px; height: 43px; }
+.cs-mob--creeper .cs-mob__icon{ width: 44px; height: 40px; }
+
+.cs-mob--slime   .cs-mob__icon{ width: 32px; height: 48px; }
+.cs-mob--blaze   .cs-mob__icon{ width: 38px; height: 48px; }
+.cs-mob--wither  .cs-mob__icon{ width: 30px; height: 48px; }
+.cs-mob--warden  .cs-mob__icon{ width: 45px; height: 52px; }
+
+.page-create .cs-mini {
+  padding: 18px 0 48px;
+}
+
+.page-create .cs-miniCard {
+  padding: 22px;
+  text-align: center;
+  border-radius: 16px;
+  min-height: 170px;
+}
+
+.page-create .cs-miniIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  margin: 0 auto 10px;
+  display: grid;
+  place-items: center;
+  background: var(--accent2);
+  border: 1px solid var(--accent2);
+  box-shadow: 0 14px 40px rgba(34,204,23,.60);
+}
+
+.page-create .cs-miniTitle {
+  margin: 8px 0 8px;
+  font-size: 16px;
+}
+
+.page-create .cs-faq {
+  padding: 56px 0;
+}
+
+.page-create .cs-faq__head {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.page-create .cs-faq__kicker {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.page-create .cs-faq__title {
+  margin: 0;
+  font-size: clamp(28px, 3.2vw, 44px);
+}
+
+.page-create .cs-faq__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.page-create .cs-faq__item {
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+.page-create .cs-faq__item--wide {
+  grid-column: span 2;
+}
+
+.page-create .cs-faq__q {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-weight: 600;
+}
+
+.page-create details summary::-webkit-details-marker {
+  display: none; 
+}
+
+.page-create .cs-faq__plus {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.75);
+  flex: 0 0 auto;
+}
+
+.page-create details[open] .cs-faq__plus {
+  background: rgba(86,220,49,.14);
+  border-color: rgba(86,220,49,.35);
+  color: var(--accent2);
+}
+
+.page-create .cs-faq__a {
+  margin-top: 10px;
+  line-height: 1.55;
+}
+
+.page-create .cs-sales {
+  padding: 46px 0 64px;
+}
+
+.page-create .cs-sales__inner {
+  text-align: center;
+}
+
+.page-create .cs-sales__title {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+.page-create .cs-sales__btn {
+  margin-top: 14px;
+  padding: 12px;
+}
+
+.cs-sales__btn{
+  color: var(--accent2) !important;
+  border: 1px solid var(--accent2) !important;
+  background: transparent !important;
+}
+
+.cs-sales__btn:hover{
+  background: color-mix(in srgb, var(--accent2) 15%, transparent) !important;
+}
+
+@media (max-width: 1100px) {
+  .page-create .cs-grid--4 { 
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  }
+}
+
+@media (max-width: 720px) {
+  .page-create .cs-billing { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    border-radius: 16px; 
+  }
+
+  .page-create .cs-faq__grid { 
+    grid-template-columns: 1fr; 
+  }
+
+  .page-create .cs-faq__item--wide { 
+    grid-column: span 1; 
+  }
+
+  .page-create .cs-grid--3 { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+@media (max-width: 520px) {
+  .page-create .cs-grid--4 { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+@media (min-width: 901px){
+  .burger{ 
+    display: none !important; 
+  }
+}
+
+@media (max-width: 900px){
+  .burger{ 
+    display: flex !important; 
+  }
+}

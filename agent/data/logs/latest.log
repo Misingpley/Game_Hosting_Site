@@ -1,0 +1,46 @@
+[10:17:24] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[10:18:03] [ServerMain/INFO]: Loaded 1174 recipes
+[10:18:05] [ServerMain/INFO]: Loaded 1271 advancements
+[10:18:06] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[10:18:06] [Server thread/WARN]: ****************************
+[10:18:06] [Server thread/WARN]: YOU ARE RUNNING THIS SERVER AS AN ADMINISTRATIVE OR ROOT USER. THIS IS NOT ADVISED.
+[10:18:06] [Server thread/WARN]: YOU ARE OPENING YOURSELF UP TO POTENTIAL RISKS WHEN DOING THIS.
+[10:18:06] [Server thread/WARN]: FOR MORE INFORMATION, SEE https://madelinemiller.dev/blog/root-minecraft-server/
+[10:18:06] [Server thread/WARN]: ****************************
+[10:18:06] [Server thread/INFO]: Loading properties
+[10:18:07] [Server thread/INFO]: This server is running Paper version git-Paper-499 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 9de3f75 on ver/1.20.4)
+[10:18:10] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[10:18:10] [Server thread/INFO]: Using 4 threads for Netty based IO
+[10:18:12] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+    We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
+    For more information please visit: https://github.com/PaperMC/Paper/issues/8948
+[10:18:12] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[10:18:14] [Server thread/INFO]: Default game type: SURVIVAL
+[10:18:14] [Server thread/INFO]: Generating keypair
+[10:18:14] [Server thread/INFO]: Starting Minecraft server on *:25565
+[10:18:15] [Server thread/INFO]: Using epoll channel type
+[10:18:15] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[10:18:15] [Server thread/INFO]: Paper: Using OpenSSL 3.0.x (Linux x86_64) cipher from Velocity.
+[10:18:15] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[10:18:15] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[10:18:15] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[10:18:15] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[10:18:15] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[10:18:15] [Server thread/INFO]: Preparing level "world"
+[10:18:18] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[10:18:25] [Server thread/INFO]: Time elapsed: 6798 ms
+[10:18:25] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[10:18:25] [Server thread/INFO]: Time elapsed: 550 ms
+[10:18:25] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[10:18:26] [Server thread/INFO]: Time elapsed: 145 ms
+[10:18:26] [Server thread/INFO]: Starting remote control listener
+[10:18:26] [Server thread/WARN]: No rcon password set in server.properties, rcon disabled!
+[10:18:26] [Server thread/INFO]: Running delayed init tasks
+[10:18:26] [Server thread/INFO]: Done (19.541s)! For help, type "help"
+[10:18:26] [Server thread/INFO]: Timings Reset
+[10:18:30] [User Authenticator #0/INFO]: UUID of player Misingpley is 883857d1-1a79-345a-90c8-8bba228f11c1
+[10:18:33] [Server thread/INFO]: Misingpley joined the game
+[10:18:33] [Server thread/INFO]: Misingpley[/172.17.0.1:49684] logged in with entity id 125 at ([world]-5.562306394257378, 64.0, 44.405085990302375)
+[10:18:36] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2547ms or 50 ticks behind
+[10:18:58] [Paper Watchdog Thread/ERROR]: --- DO NOT REPORT THIS TO PAPER - THIS IS NOT A BUG OR A CRASH  - git-Paper-499 (MC: 1.20.4) ---
+[10:22:03] [Paper Watchdog Thread/ERROR]: The server has not responded for 10 seconds! Creating thread dump
