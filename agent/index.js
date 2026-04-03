@@ -5,15 +5,8 @@ import { WebSocketServer } from "ws";
 import Docker from "dockerode";
 import { Rcon } from "rcon-client";
 import os from "os";
-import mongoose from "mongoose";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import User from "./models/User.js";
 import dotenv from "dotenv";
 dotenv.config();
-
-await mongoose.connect(process.env.MONGO_URL);
-console.log("MongoDB connected");
 
 const app = express();
 app.use(express.json());
@@ -227,62 +220,6 @@ app.post("/server/restart", async (_req, res) => {
     res.status(500).json({ error: String(error) });
   }
 });
-
-//AUTH
-
-app.post("/auth/register", async (req, res) => {
-  try {
-    const { username, password } = req.body;
-
-    if (!username || !password)
-      return res.status(400).json({ error: "Fill all fields" });
-
-    const existing = await User.findOne({ username });
-    if (existing)
-      return res.status(400).json({ error: "User exists" });
-
-    const hash = await bcrypt.hash(password, 10);
-
-    await User.create({
-      username,
-      passwordHash: hash
-    });
-
-    res.json({ message: "User created" });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-app.post("/auth/login", async (req, res) => {
-  try {
-    const { username, password } = req.body;
-
-    const user = await User.findOne({ username });
-    if (!user)
-      return res.status(401).json({ error: "Invalid credentials" });
-
-    const valid = await bcrypt.compare(password, user.passwordHash);
-    if (!valid)
-      return res.status(401).json({ error: "Invalid credentials" });
-
-    const token = jwt.sign(
-      {
-        id: user._id,
-        role: user.role
-      },
-      process.env.JWT_SECRET,
-      { expiresIn: "7d" }
-    );
-
-    res.json({ token });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-
-
 
 server.listen(7000, () => {
   console.log("Agent running on http://localhost:7000");
