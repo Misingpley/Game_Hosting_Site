@@ -1,0 +1,37 @@
+[15:06:03] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[15:06:14] [ServerMain/INFO]: Loaded 1174 recipes
+[15:06:15] [ServerMain/INFO]: Loaded 1271 advancements
+[15:06:15] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[15:06:15] [Server thread/WARN]: ****************************
+[15:06:15] [Server thread/WARN]: YOU ARE RUNNING THIS SERVER AS AN ADMINISTRATIVE OR ROOT USER. THIS IS NOT ADVISED.
+[15:06:15] [Server thread/WARN]: YOU ARE OPENING YOURSELF UP TO POTENTIAL RISKS WHEN DOING THIS.
+[15:06:15] [Server thread/WARN]: FOR MORE INFORMATION, SEE https://madelinemiller.dev/blog/root-minecraft-server/
+[15:06:15] [Server thread/WARN]: ****************************
+[15:06:15] [Server thread/INFO]: Loading properties
+[15:06:15] [Server thread/INFO]: This server is running Paper version git-Paper-499 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 9de3f75 on ver/1.20.4)
+[15:06:17] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[15:06:17] [Server thread/INFO]: Using 4 threads for Netty based IO
+[15:06:18] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+    We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
+    For more information please visit: https://github.com/PaperMC/Paper/issues/8948
+[15:06:18] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[15:06:18] [Server thread/INFO]: Default game type: SURVIVAL
+[15:06:18] [Server thread/INFO]: Generating keypair
+[15:06:19] [Server thread/INFO]: Starting Minecraft server on *:25565
+[15:06:19] [Server thread/INFO]: Using epoll channel type
+[15:06:19] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[15:06:19] [Server thread/INFO]: Paper: Using OpenSSL 3.0.x (Linux x86_64) cipher from Velocity.
+[15:06:19] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[15:06:19] [Server thread/INFO]: Preparing level "world"
+[15:06:20] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[15:06:21] [Server thread/INFO]: Time elapsed: 498 ms
+[15:06:21] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[15:06:24] [Server thread/INFO]: Time elapsed: 2585 ms
+[15:06:24] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[15:06:24] [Server thread/INFO]: Time elapsed: 59 ms
+[15:06:24] [Server thread/INFO]: Starting remote control listener
+[15:06:24] [Server thread/INFO]: Thread RCON Listener started
+[15:06:24] [Server thread/INFO]: RCON running on 0.0.0.0:25575
+[15:06:24] [Server thread/INFO]: Running delayed init tasks
+[15:06:24] [Server thread/INFO]: Done (8.709s)! For help, type "help"
+[15:06:24] [Server thread/INFO]: Timings Reset

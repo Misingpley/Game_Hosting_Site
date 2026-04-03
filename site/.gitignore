@@ -28,3 +28,7 @@ build
 *.njsproj
 *.sln
 *.sw?
+
+# minecraft server data
+agent/data/*
+!agent/data/eula.txt
