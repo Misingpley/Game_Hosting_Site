@@ -31,4 +31,5 @@ build
 
 # minecraft server data
 agent/data/*
+agent/data
 !agent/data/eula.txt

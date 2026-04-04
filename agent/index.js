@@ -71,6 +71,7 @@ function calcCpu(stats) {
 }
 
 //WebSocket
+
 function broadcast(line) {
   for (const client of wss.clients) {
     if (client.readyState === 1) {
@@ -82,32 +83,42 @@ function broadcast(line) {
 let logStream = null;
 
 async function streamLogs() {
+  if (logStream) return;
+
   if (!(await isRunning())) return;
 
   const container = await getContainer();
 
-  if (logStream) {
-    logStream.destroy();
-    logStream = null;
-  }
-
-  logStream = await container.logs({
-    follow: true,
+  logStream = await container.attach({
+    stream: true,
     stdout: true,
-    stderr: true,
-    tail: 100
+    stderr: true
   });
 
+  let buffer = "";
+
   logStream.on("data", (chunk) => {
-    broadcast(chunk.toString());
+    buffer += chunk.toString();
+
+      if (buffer.length > 20000) {
+        buffer = buffer.slice(-10000);
+      }
+  });
+
+  const interval = setInterval(() => {
+    if (!buffer) return;
+
+    broadcast(buffer);
+    buffer = "";
+  }, 100);
+
+  logStream.on("end", () => {
+    clearInterval(interval);
+    logStream = null;
   });
 
   logStream.on("error", (err) => {
     console.error("Docker log stream error:", err);
-  });
-
-  logStream.on("end", () => {
-    logStream = null;
   });
 }
 
@@ -196,9 +207,9 @@ app.post("/server/stop", async (_req, res) => {
     }
 
     if (logStream) {
-      logStream.destroy();
-      logStream = null;
-    }
+    logStream.removeAllListeners();
+    logStream = null;
+  }
 
     res.json({ ok: true });
   } catch (error) {

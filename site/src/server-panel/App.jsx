@@ -228,45 +228,64 @@ function ServerPage({ id, tab }) {
     return () => clearInterval(interval);
   }, [loadStatus, loadMetrics]);
 
-  // остальной код ServerPage оставлен без изменений...
+  const bufferRef = useRef([]);
 
   // WS console
   useEffect(() => {
-    if (tab !== "console") return;
+  if (tab !== "console") return;
 
-    let ws;
-    let isAlive = true;
+  let ws;
+  let isAlive = true;
 
-    const connect = () => {
-      ws = new WebSocket("ws://localhost:7000/ws/console");
-      wsRef.current = ws;
+  const connect = () => {
+    ws = new WebSocket("ws://localhost:7000/ws/console");
+    wsRef.current = ws;
 
-      ws.onmessage = (event) => {
-        try {
-          const message = JSON.parse(event.data);
-          if (message.type === "log") {
-            setLogs((prev) => [...prev.slice(-1200), message.line]);
-          }
-        } catch {}
-      };
-
-      ws.onclose = () => {
-        wsRef.current = null;
-        if (isAlive) setTimeout(connect, 1000);
-      };
-    };
-
-    connect();
-
-    return () => {
-      isAlive = false;
+    ws.onmessage = (event) => {
       try {
-        ws?.close();
+        const message = JSON.parse(event.data);
+
+        if (message.type === "log") {
+          bufferRef.current.push(message.line);
+        }
       } catch {}
     };
-  }, [tab]);
 
-  useEffect(() => {
+    ws.onclose = () => {
+      wsRef.current = null;
+      if (isAlive) setTimeout(connect, 1000);
+    };
+  };
+
+  connect();
+
+  return () => {
+    isAlive = false;
+    try {
+      ws?.close();
+    } catch {}
+  };
+}, [tab]);
+
+useEffect(() => {
+  if (tab !== "console") return;
+
+  const interval = setInterval(() => {
+    if (bufferRef.current.length === 0) return;
+
+    const chunk = bufferRef.current;
+    bufferRef.current = [];
+
+    setLogs(prev => {
+      const next = [...prev, ...chunk];
+      return next.slice(-1200);
+    });
+  }, 100);
+
+  return () => clearInterval(interval);
+}, [tab]);
+
+useEffect(() => {
     if (tab !== "console") return;
     const el = logBoxRef.current;
     if (el) el.scrollTop = el.scrollHeight;
@@ -342,7 +361,7 @@ function ServerPage({ id, tab }) {
           className={`tab ${tab === "files" ? "active" : ""}`}
           onClick={() => go(`#/server/${id}/files`)}
         >
-          📁 Files
+          Files
         </div>
       </div>
 
