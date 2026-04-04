@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, useCallback } from "react";
+import { useEffect, useMemo, useRef, useState, useCallback} from "react";
 import "./App.css";
 
 const API = "http://localhost:7000";
@@ -217,8 +217,6 @@ function ServerPage({ id, tab }) {
   }, []);
 
   useEffect(() => {
-    loadStatus();
-    loadMetrics();
 
     const interval = setInterval(() => {
       loadStatus();

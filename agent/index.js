@@ -6,15 +6,15 @@ import Docker from "dockerode";
 import { Rcon } from "rcon-client";
 import os from "os";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 
-//CORS для фронта
 app.use(
   cors({
-    origin: "http://localhost:5173"
+    origin: process.env.FRONTEND_URL || "http://localhost:5173"
   })
 );
 
@@ -27,28 +27,20 @@ const wss = new WebSocketServer({
 const docker = new Docker();
 const CONTAINER_NAME = "mc-mvp-server";
 
-//Утіли
+//UTILS
+
 function bytes(value) {
   return typeof value === "number" ? value : 0;
 }
 
-async function containerExists() {
-  const containers = await docker.listContainers({ all: true });
-  return containers.some((c) =>
-    c.Names?.includes("/" + CONTAINER_NAME)
-  );
-}
-
-async function getContainer() {
-  return docker.getContainer(CONTAINER_NAME);
-}
-
 async function isRunning() {
-  if (!(await containerExists())) return false;
-
-  const container = await getContainer();
-  const info = await container.inspect();
-  return info.State.Running;
+  try {
+    const container = docker.getContainer(CONTAINER_NAME);
+    const info = await container.inspect();
+    return info.State.Running;
+  } catch {
+    return false;
+  }
 }
 
 function calcCpu(stats) {
@@ -70,12 +62,14 @@ function calcCpu(stats) {
   return 0;
 }
 
-//WebSocket
+//WEBSOCKET
 
 function broadcast(line) {
+  const payload = JSON.stringify({ type: "log", line });
+
   for (const client of wss.clients) {
     if (client.readyState === 1) {
-      client.send(JSON.stringify({ type: "log", line }));
+      client.send(payload);
     }
   }
 }
@@ -87,7 +81,7 @@ async function streamLogs() {
 
   if (!(await isRunning())) return;
 
-  const container = await getContainer();
+  const container = docker.getContainer(CONTAINER_NAME);
 
   logStream = await container.attach({
     stream: true,
@@ -100,15 +94,15 @@ async function streamLogs() {
   logStream.on("data", (chunk) => {
     buffer += chunk.toString();
 
-      if (buffer.length > 20000) {
-        buffer = buffer.slice(-10000);
-      }
+    if (buffer.length > 20000) {
+      buffer = buffer.slice(-10000);
+    }
   });
 
   const interval = setInterval(() => {
     if (!buffer) return;
 
-    broadcast(buffer);
+    broadcast(buffer.trim());
     buffer = "";
   }, 100);
 
@@ -121,6 +115,8 @@ async function streamLogs() {
     console.error("Docker log stream error:", err);
   });
 }
+
+//WS
 
 wss.on("connection", (ws) => {
   ws.on("message", async (raw) => {
@@ -147,10 +143,13 @@ wss.on("connection", (ws) => {
 });
 
 //REST API
+
 app.get("/server/status", async (_req, res) => {
+  const running = await isRunning();
+
   res.json({
-    exists: await containerExists(),
-    running: await isRunning()
+    exists: running,
+    running
   });
 });
 
@@ -165,23 +164,24 @@ app.get("/server/metrics", async (_req, res) => {
       });
     }
 
-    const container = await getContainer();
+    const container = docker.getContainer(CONTAINER_NAME);
     const stats = await container.stats({ stream: false });
 
     res.json({
       running: true,
       cpuPercent: calcCpu(stats),
-      memUsed: bytes(stats.memory_stats?.usage),
-      memLimit: bytes(stats.memory_stats?.limit)
+      memUsed: stats.memory_stats?.usage || 0,
+      memLimit: stats.memory_stats?.limit || 0
     });
   } catch (error) {
+    console.error("Metrics error:", error);
     res.status(500).json({ error: String(error) });
   }
 });
 
 app.post("/server/start", async (_req, res) => {
   try {
-    const container = await getContainer();
+    const container = docker.getContainer(CONTAINER_NAME);
     const running = await isRunning();
 
     if (!running) {
@@ -199,7 +199,7 @@ app.post("/server/start", async (_req, res) => {
 
 app.post("/server/stop", async (_req, res) => {
   try {
-    const container = await getContainer();
+    const container = docker.getContainer(CONTAINER_NAME);
     const running = await isRunning();
 
     if (running) {
@@ -207,9 +207,9 @@ app.post("/server/stop", async (_req, res) => {
     }
 
     if (logStream) {
-    logStream.removeAllListeners();
-    logStream = null;
-  }
+      logStream.removeAllListeners();
+      logStream = null;
+    }
 
     res.json({ ok: true });
   } catch (error) {
@@ -220,7 +220,7 @@ app.post("/server/stop", async (_req, res) => {
 
 app.post("/server/restart", async (_req, res) => {
   try {
-    const container = await getContainer();
+    const container = docker.getContainer(CONTAINER_NAME);
 
     await container.restart();
     await streamLogs();
@@ -232,6 +232,10 @@ app.post("/server/restart", async (_req, res) => {
   }
 });
 
-server.listen(7000, () => {
-  console.log("Agent running on http://localhost:7000");
+// ===== START =====
+
+const PORT = process.env.PORT || 7000;
+
+server.listen(PORT, () => {
+  console.log("Agent running on http://localhost:" + PORT);
 });
