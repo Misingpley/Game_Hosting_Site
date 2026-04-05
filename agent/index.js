@@ -68,7 +68,7 @@ function broadcast(line) {
   const payload = JSON.stringify({ type: "log", line });
 
   for (const client of wss.clients) {
-    if (client.readyState === 1) {
+    if (client.readyState === WebSocket.OPEN) {
       client.send(payload);
     }
   }
@@ -102,7 +102,15 @@ async function streamLogs() {
   const interval = setInterval(() => {
     if (!buffer) return;
 
-    broadcast(buffer.trim());
+  const lines = buffer.split("\n");
+
+    for (let line of lines) {
+      line = line.trim();
+      if (!line) continue;
+
+      broadcast(`[${new Date().toLocaleTimeString()}] ${line}`);
+    }
+
     buffer = "";
   }, 100);
 
@@ -124,20 +132,25 @@ wss.on("connection", (ws) => {
       const message = JSON.parse(raw.toString());
 
       if (message.type === "cmd") {
+        const cmd = message.cmd?.trim();
+          if (!cmd) return;
+
         const rcon = await Rcon.connect({
           host: "127.0.0.1",
           port: Number(process.env.RCON_PORT),
           password: process.env.RCON_PASSWORD
         });
 
-        const output = await rcon.send(message.cmd);
+        const output = await rcon.send(cmd);
         await rcon.end();
 
-        broadcast("> " + message.cmd);
+        broadcast("> " + cmd);
         if (output) broadcast(output);
+
       }
     } catch (error) {
-      broadcast("[RCON error] " + String(error));
+      console.error(error);
+      broadcast("[RCON error] ");
     }
   });
 });
