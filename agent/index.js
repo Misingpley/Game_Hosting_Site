@@ -69,7 +69,11 @@ function broadcast(line) {
 
   for (const client of wss.clients) {
     if (client.readyState === WebSocket.OPEN) {
-      client.send(payload);
+      try {
+        client.send(payload);
+      } catch (e) {
+        console.error("WS send error:", e);
+      }
     }
   }
 }
@@ -127,13 +131,14 @@ async function streamLogs() {
 //WS
 
 wss.on("connection", (ws) => {
+  console.log("WS client connected");
   ws.on("message", async (raw) => {
     try {
       const message = JSON.parse(raw.toString());
 
       if (message.type === "cmd") {
         const cmd = message.cmd?.trim();
-          if (!cmd) return;
+          if (!cmd || cmd.length > 200) return;
 
         const rcon = await Rcon.connect({
           host: "127.0.0.1",
@@ -152,6 +157,9 @@ wss.on("connection", (ws) => {
       console.error(error);
       broadcast("[RCON error] ");
     }
+  });
+  ws.on("close", () => {
+    console.log("WS client disconnected");
   });
 });
 
