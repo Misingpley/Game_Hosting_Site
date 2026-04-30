@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState, useCallback} from "react";
 import "./App.css";
 
-const API = "http://localhost:7000";
+const API = import.meta.env.VITE_API_URL || "http://localhost:7000";
+const PANEL_KEY = import.meta.env.VITE_PANEL_KEY || "change-this-panel-key";
 
 //utils
 function formatBytes(bytes) {
@@ -37,7 +38,7 @@ function clamp(value, min, max) {
 // API helpers
 async function apiGet(path) {
   const response = await fetch(API + path, {
-    headers: { "x-panel-key": "123456" }
+    headers: { "x-panel-key": PANEL_KEY }
   });
 
   if (!response.ok) throw new Error("API error");
@@ -47,7 +48,7 @@ async function apiGet(path) {
 async function apiPost(path) {
   await fetch(API + path, {
     method: "POST",
-    headers: { "x-panel-key": "123456" }
+    headers: { "x-panel-key": PANEL_KEY }
   });
 }
 

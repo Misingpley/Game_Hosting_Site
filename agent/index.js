@@ -12,11 +12,27 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
+const PANEL_KEY = process.env.PANEL_KEY;
+
+function requirePanelKey(req, res, next) {
+  if (!PANEL_KEY) {
+    return res.status(500).json({ error: "PANEL_KEY is not configured" });
+  }
+
+  if (req.headers["x-panel-key"] !== PANEL_KEY) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+
+  next();
+}
+
 app.use(
   cors({
     origin: process.env.FRONTEND_URL || "http://localhost:5173"
   })
 );
+
+app.use(requirePanelKey);
 
 const server = http.createServer(app);
 const wss = new WebSocketServer({
@@ -163,7 +179,7 @@ wss.on("connection", (ws) => {
   });
 });
 
-//REST API
+//REST
 
 app.get("/server/status", async (_req, res) => {
   const running = await isRunning();
@@ -252,8 +268,6 @@ app.post("/server/restart", async (_req, res) => {
     res.status(500).json({ error: String(error) });
   }
 });
-
-// ===== START =====
 
 const PORT = process.env.PORT || 7000;
 
