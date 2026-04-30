@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+*/node_modules/
+
+# env
+.env
+*.env
+!.env.example
+
+# builds
+dist/
+build/
+
+# logs
+*.log
+
+# system/editor
+.DS_Store
+.idea/
+.vscode/
+
+# minecraft/server data
+data/
+agent/data/*
+!agent/data/eula.txt
